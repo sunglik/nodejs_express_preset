@@ -17,6 +17,9 @@ const app = express();
 const port = 3000;
 const devPort = 4000;
 
+app.use(morgan('dev'));
+app.use(bodyParser.json());
+
 const db = mongoose.connection;
 db.on('error', console.error);
 db.once('open', () => {console.log('Connected to mongodb Server');});
@@ -28,8 +31,7 @@ app.use(session({
     saveUninitialized: true
 }));
 
-app.use(morgan('dev'));
-app.use(bodyParser.json());
+app.use('/', express.static(path.join(__dirname, './../public')));
 
 app.use('/api', api);
 
@@ -37,15 +39,9 @@ app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, './../public/index.html'));
 });
 
-app.use('/', express.static(path.join(__dirname, './../public')));
-
 app.use(function(err, req, res ,next){
     console.error(err.stack);
     res.status(500).send("Something broke!");
-});
-
-app.get('/hello', (req, res) => {
-    return res.send('Hello Sunglik');
 });
 
 app.listen(port, () => {
