@@ -73,11 +73,14 @@ Nevertheless, this is best one of make a project method.
 
 
 
-#Writer
+# Writer
 sungliky@gmail.com(sungliky@gmail.com)
 
-#Reference
+# Reference
+https://github.com/velopert/react-codelab-project
+
 https://github.com/facebook/react
+
 https://github.com/gaearon/react-hot-loader
 
 
