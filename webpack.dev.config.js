@@ -1,5 +1,4 @@
 var webpack = require('webpack');
-var path = require('path');
 
 module.exports = {
 
@@ -66,13 +65,12 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: 'style!css-loader'
+                loader: 'style-loader'
+            },
+            {
+                test: /\.css$/,
+                loader: 'css-loader'
             }
         ]
-    },
-
-    resolve: {
-        root: path.resolve('./src'),
-
     }
 };
