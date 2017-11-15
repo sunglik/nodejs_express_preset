@@ -26,6 +26,7 @@ module.exports = {
         publicPath: '/',
         historyApiFallback: true,
         contentBase: './public',
+        inline: true,
         /* 모든 요청을 프록시로 돌려서 express의 응답을 받아오며,
         bundle 파일의 경우엔 우선권을 가져서 devserver 의 스크립트를 사용하게 됩니다 */
         proxy: {
@@ -44,11 +45,11 @@ module.exports = {
     },
 
 
-    // plugins: [
+    plugins: [
     //     new webpack.optimize.OccurenceOrderPlugin(),
-    //     new webpack.HotModuleReplacementPlugin(),
+         new webpack.HotModuleReplacementPlugin(),
     //     new webpack.NoErrorsPlugin()
-    // ],
+     ],
 
     module: {
         loaders: [

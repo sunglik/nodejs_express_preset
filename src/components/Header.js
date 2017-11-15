@@ -23,7 +23,7 @@ export default class Header extends Component {
             <div>
                 <nav>
                     <div className="nav-wrapper blue darken-1">
-                        <a className="brand-logo center">MEMOPAD</a>
+                        <a className="brand-logo center">MEMO</a>
 
                         <ul>
                             <li><a><i className="material-icons">search</i></a></li>
