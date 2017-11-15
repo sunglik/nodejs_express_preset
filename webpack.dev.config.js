@@ -81,4 +81,8 @@ module.exports = {
             containers: path.resolve(__dirname, 'src/containers/')
         }
     }
+    // or this.
+    // resolve: {
+    //     modules: [path.resolve(__dirname, "src"), "node_modules"]
+    //     }
 };
