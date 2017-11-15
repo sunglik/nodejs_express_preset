@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 
 export default class Header extends Component {
     render() {
@@ -23,7 +24,7 @@ export default class Header extends Component {
             <div>
                 <nav>
                     <div className="nav-wrapper blue darken-1">
-                        <a className="brand-logo center">MEMO</a>
+                        <Link to = "/" className="brand-logo center">MEMO</Link>
 
                         <ul>
                             <li><a><i className="material-icons">search</i></a></li>
