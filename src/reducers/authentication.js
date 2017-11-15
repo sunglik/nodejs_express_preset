@@ -43,6 +43,4 @@ export default function authentication(state, action) {
             return state;
 
     }
-
-        return state;
 }
