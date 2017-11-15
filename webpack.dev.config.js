@@ -1,5 +1,5 @@
 var webpack = require('webpack');
-//var path = require('path');
+var path = require('path');
 
 module.exports = {
 
@@ -74,8 +74,11 @@ module.exports = {
             }
         ]
     }
-    // ,
-    // resolve: {
-    //     root: path.resolve('./src')
-    // }
+    ,
+    resolve: {
+        alias: {
+            components: path.resolve(__dirname, 'src/components/'),
+            containers: path.resolve(__dirname, 'src/containers/')
+        }
+    }
 };
