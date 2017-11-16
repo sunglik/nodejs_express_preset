@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import { Authentication } from '../components/index';
+//import { Authentication } from '../components/index';
+import { Authentication } from 'components';
 import { connect } from 'react-redux';
+import { loginRequest } from 'actions/authentication';
 import { browserHistory} from 'react-router-dom';
 
 class Login extends Component {
@@ -56,6 +58,6 @@ const mapDispatchToProps = (dispatch) => {
         loginRequest: (id, pw) => {
           return dispatch(loginRequest(id,pw));
         }
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(Authentication);
+    };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
