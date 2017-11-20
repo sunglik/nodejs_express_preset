@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, browserHistory, IndexRoute, Switch } from 'react-router-dom';
-import { App, Home, Login, Register } from 'containers';
+import { BrowserRouter as Router, Route, IndexRoute, Switch } from 'react-router-dom';
+import { App, Home, Login, Register } from './containers';
 
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware} from 'redux';
@@ -15,7 +15,7 @@ const store = createStore(reducers, applyMiddleware(thunk));
 const rootElement = document.getElementById('root');
 ReactDOM.render(
     <Provider store={store}>
-        <Router history={browserHistory}>
+        <Router history={Router.browserHistory}>
             <div>
                 <Route path="/" component={App}/>
                 <Switch>

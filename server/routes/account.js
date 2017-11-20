@@ -37,7 +37,7 @@ router.post('/signup', (req, res) => {
         });
 
         account.password = account.generateHash(account.password);
-
+        console.log("yapyap");
         // SAVE IN THE DATABASE
         account.save( err => {
             if(err) throw err;

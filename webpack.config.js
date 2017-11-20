@@ -1,3 +1,5 @@
+var path = require('path');
+
 module.exports = {
     entry: './src/index.js',
 
@@ -10,7 +12,7 @@ module.exports = {
         loaders: [
             {
                 test: /.js$/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 exclude: /node_modules/,
                 query: {
                     cacheDirectory: true,
@@ -19,5 +21,15 @@ module.exports = {
                 }
             }
         ]
+    }
+    ,
+    resolve: {
+        alias: {
+            components: path.resolve(__dirname, 'src/components/'),
+            containers: path.resolve(__dirname, 'src/containers/'),
+            reducers: path.resolve(__dirname, 'src/reducers/'),
+            actions: path.resolve(__dirname, 'src/actions/')
+
+        }
     }
 };
