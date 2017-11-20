@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/signup', (req, res) => {
     let usernameRegex = /^[a-z0-9]+$/;
-
+   
     if(!usernameRegex.test(req.body.username)){
         return res.status(400).json({
             error: 'BAD USERNAME',
@@ -55,36 +55,30 @@ router.post('/signin', (req, res) => {
             code: 1
         });
     }
-
     Account.findOne({ username: req.body.username}, (err, account) => {
         if(err) throw err;
-
         if(!account) {
             return res.status(401).json({
                 error: "LOGIN FAILED",
                 code: 1
             });
         }
-
         if(!account.validateHash(req.body.password)){
             return res.status(401).json({
                 error: "LOGIN FAILED",
                 code: 1
             });
         }
-
         let session = req.session;
         session.loginInfo = {
             _id: account._id,
             username: account.username
         };
-
         return res.json({
             success: true
         });
     });
-
-    res.json({success : true});
+    //res.json({success : true});
 });
 
 router.get('/getinfo', (req, res) => {

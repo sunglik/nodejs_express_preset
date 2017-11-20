@@ -18,8 +18,6 @@ export default class Header extends Component {
                 </a>
             </li>
         );
-
-
         return (
             <div>
                 <nav>
