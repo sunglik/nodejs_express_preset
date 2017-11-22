@@ -25,7 +25,7 @@ export default class Authentication extends Component {
     handleLogin() {
         let id = this.state.username;
         let pw = this.state.password;
-
+        
         this.props.onLogin(id, pw).then(
             (success) => {
                 if(!success) {

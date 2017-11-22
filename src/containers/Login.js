@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-//import { Authentication } from '../components/index';
 import { Authentication } from 'components';
 import { connect } from 'react-redux';
 import { loginRequest } from 'actions/authentication';
-import { browserHistory} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 class Login extends Component {
 
@@ -25,7 +24,8 @@ class Login extends Component {
           document.cookie = 'key=' + btoa(JSON.stringify(loginData));
 
           Materialize.toast('Welcome, ' + id + '!', 2000);
-          browserHistory.push('/');
+          //BrowserRouter.browserHistory.push('/');
+          this.props.history.push('/home');
           return true;
         } else {
           let $toastContent = $('<span style="color: #FFB4BA">Incorrect username or password</span>');

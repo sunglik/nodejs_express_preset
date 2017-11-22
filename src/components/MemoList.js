@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Memo } from '../components'
 
 export default class MemoList extends Component {
   render() {

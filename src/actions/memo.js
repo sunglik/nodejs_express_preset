@@ -12,7 +12,7 @@ export function memoPostRequest(contents) {
     return (dispatch) => {
         // inform MEMO POST API is starting
         dispatch(memoPost());
-
+        console.log("yes here");
         return axios.post('/api/memo/', { contents })
         .then((response) => {
             dispatch(memoPostSuccess());

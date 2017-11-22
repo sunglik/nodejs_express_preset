@@ -24,7 +24,7 @@ export default class Memo extends Component {
             <div className="card">
                 <div className="info">
                     <a className="username">{this.props.data.writer}</a> wrote a log · <TimeAgo date={this.props.data.date.created}/> 
-                    { ownership ? dropDownMenu : undefined }}wrote a log · <TimeAgo date={data.date.created} />
+                    { ownership ? dropDownMenu : undefined } wrote a log · <TimeAgo date={data.date.created} />
                     <div className="option-button">
                         <a className='dropdown-button'
                             id={`dropdown-button-${data._id}`}

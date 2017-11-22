@@ -1,4 +1,4 @@
-import * as types from 'actions/ActionTypes';
+import * as types from '../actions/ActionTypes';
 import update from 'react-addons-update';
 
 const initialState = {
@@ -28,7 +28,7 @@ export default function authentication(state, action) {
                     status: {$set: 'WAITING'}
                 }
             });
-        case types.AUTH_LOGIN_SUCCES:
+        case types.AUTH_LOGIN_SUCCESS:
             return update(state, {
                 login: {
                     status: { $set: 'SUCCESS'}
